@@ -1,0 +1,19 @@
+################ Simple DaemonSet Creation File #############################
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    run: nginx
+  name: nginx-ds
+spec:
+  selector:
+    matchLabels:
+      run: nginx
+  template:
+    metadata:
+      labels:
+        run: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
